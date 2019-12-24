@@ -15,11 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Slf4j
 @Component
 @ServerEndpoint("/groupChat/{sid}/{username}")
 public class GroupChatController {
-
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(GroupChatController.class);
     // 保存 组id->组成员 的映射关系
     private static ConcurrentHashMap<String, List<Session>> groupMemberInfoMap = new ConcurrentHashMap<>();
 
